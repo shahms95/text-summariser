@@ -1,0 +1,22 @@
+Abstract— Text Summarization is condensing the source
+text into a shorter version preserving its information
+content and overall meaning. It is very difficult for human
+beings to manually summarize large documents of text. Text
+Summarization methods can be classified into extractive
+and
+abstractive
+summarization.
+An
+extractive
+summarization method consists of selecting important
+sentences, paragraphs etc. from the original document and
+concatenating them into shorter form. The importance of
+sentences is decided based on statistical and linguistic
+features of sentences. An abstractive summarization method
+consists of understanding the original text and re-telling it
+in fewer words. It uses linguistic methods to examine and
+interpret the text and then to find the new concepts and
+expressions to best describe it by generating a new shorter
+text that conveys the most important information from the
+original text document. In this paper, a Survey of Text
+Summarization Extractive techniques has been presented.
