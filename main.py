@@ -1,11 +1,4 @@
-# coding=UTF-8
-from __future__ import division
 import re
-
-# This is a naive text summarization algorithm
-# Created by Shlomi Babluki
-# April, 2013
-
 
 class SummaryTool(object):
 
