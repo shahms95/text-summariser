@@ -35,13 +35,13 @@ class SummaryTool(object):
     # Format a sentence - remove all non-alphbetic chars from the sentence
     # We'll use the formatted sentence as a key in our sentences dictionary
     def format_sentence(self, sentence):
-        sentence = re.sub(r'\W+', '', sentence)
+        sentence = re.sub(r'\W+', '', sentence) 	#replace space by nothing
         return sentence
 
     # Convert the content into a dictionary <K, V>
     # k = The formatted sentence
     # V = The rank of the sentence
-    def get_senteces_ranks(self, content):
+    def get_sentences_ranks(self, content):
 
         # Split the content into sentences
         sentences = self.split_content_to_sentences(content)
@@ -102,7 +102,7 @@ class SummaryTool(object):
         for p in paragraphs:
             sentence = self.get_best_sentence(p, sentences_dic).strip()
             if sentence:
-                summary.append(sentence)
+                summary.append(sentence+".")
 
         return ("\n").join(summary)
 
@@ -118,27 +118,11 @@ def main():
     """
 
     content = """
-    Abstract— Text Summarization is condensing the source
-text into a shorter version preserving its information
-content and overall meaning. It is very difficult for human
-beings to manually summarize large documents of text. Text
-Summarization methods can be classified into extractive
-and
-abstractive
-summarization.
-An
-extractive
-summarization method consists of selecting important
-sentences, paragraphs etc. from the original document and
-concatenating them into shorter form. The importance of
-sentences is decided based on statistical and linguistic
-features of sentences. An abstractive summarization method
-consists of understanding the original text and re-telling it
-in fewer words. It uses linguistic methods to examine and
-interpret the text and then to find the new concepts and
-expressions to best describe it by generating a new shorter
-text that conveys the most important information from the
-original text document. In this paper, a Survey of Text
+    Abstract— Text Summarization is condensing the source text into a shorter version preserving its information content and overall meaning. It is very difficult for human beings to manually summarize large documents of text. Text Summarization methods can be classified into extractive and abstractive summarization.
+    
+    An extractive summarization method consists of selecting important sentences, paragraphs etc. from the original document and concatenating them into shorter form. The importance of sentences is decided based on statistical and linguistic features of sentences. An abstractive summarization method consists of understanding the original text and re-telling it in fewer words.
+
+     It uses linguistic methods to examine and interpret the text and then to find the new concepts and expressions to best describe it by generating a new shorter text that conveys the most important information from the original text document. In this paper, a Survey of Text
 Summarization Extractive techniques has been presented.
     """
 
@@ -146,7 +130,7 @@ Summarization Extractive techniques has been presented.
     st = SummaryTool()
 
     # Build the sentences dictionary
-    sentences_dic = st.get_senteces_ranks(content)
+    sentences_dic = st.get_sentences_ranks(content)
 
     # Build the summary with the sentences dictionary
     summary = st.get_summary(title, content, sentences_dic)
